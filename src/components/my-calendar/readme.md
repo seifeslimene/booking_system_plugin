@@ -1,9 +1,6 @@
 # my-calendar
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,25 +8,24 @@
 | ------------ | ------------- | ----------- | ----- | ----------- |
 | `facilityId` | `facility-id` |             | `any` | `undefined` |
 
-
 ## Events
 
 | Event        | Description | Type                    |
 | ------------ | ----------- | ----------------------- |
 | `stepChange` |             | `CustomEvent<StepData>` |
 
-
 ## Dependencies
 
 ### Used by
 
- - [my-modal](../my-modal)
+- [my-modal](../my-modal)
 
 ### Depends on
 
 - [my-loader](../my-loader)
 
 ### Graph
+
 ```mermaid
 graph TD;
   my-calendar --> my-loader

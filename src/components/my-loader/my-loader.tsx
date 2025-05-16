@@ -9,7 +9,6 @@ export class MyLoader implements ComponentInterface {
   render() {
     return (
       <Host>
-
         <div>
           <div class="multi-spinner-container">
             <div class="multi-spinner">
@@ -17,8 +16,7 @@ export class MyLoader implements ComponentInterface {
                 <div class="multi-spinner">
                   <div class="multi-spinner">
                     <div class="multi-spinner">
-                      <div class="multi-spinner">
-                      </div>
+                      <div class="multi-spinner"></div>
                     </div>
                   </div>
                 </div>

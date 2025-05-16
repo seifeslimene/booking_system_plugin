@@ -1,9 +1,6 @@
 # my-service
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Events
 
@@ -11,18 +8,18 @@
 | ------------ | ----------- | ----------------------- |
 | `stepChange` |             | `CustomEvent<StepData>` |
 
-
 ## Dependencies
 
 ### Used by
 
- - [my-modal](../my-modal)
+- [my-modal](../my-modal)
 
 ### Depends on
 
 - [my-loader](../my-loader)
 
 ### Graph
+
 ```mermaid
 graph TD;
   my-service --> my-loader

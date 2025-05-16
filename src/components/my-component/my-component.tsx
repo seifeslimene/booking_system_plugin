@@ -3,7 +3,7 @@ import { Component, State, h, Prop } from "@stencil/core";
 @Component({
   tag: "my-component",
   styleUrl: "my-component.css",
-  shadow: true
+  shadow: true,
 })
 export class MyComponent {
   @State() expanded: boolean = false;

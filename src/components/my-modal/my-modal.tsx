@@ -24,7 +24,7 @@ export class MyModal implements ComponentInterface {
   @State() modalData = {
     services: [],
     facility: { id: "" },
-    selectedTime: '',
+    selectedTime: "",
     userData: null,
   };
   @Prop() token: string;
@@ -45,12 +45,24 @@ export class MyModal implements ComponentInterface {
       <Host>
         <div class="progress" style={{ width: this.progress() }}></div>
         {this.step === 1 && <my-service token_api={this.token}></my-service>}
-        {this.step === 2 && <my-facilities token_api={this.token}></my-facilities>}
-        {this.step === 3 && (
-          <my-calendar facilityId={this.modalData.facility.id} token_api={this.token}></my-calendar>
+        {this.step === 2 && (
+          <my-facilities token_api={this.token}></my-facilities>
         )}
-        {this.step === 4 && <my-form selectedTime={this.modalData.selectedTime}></my-form>}
-        {this.step === 5 && <my-confirm modalData={this.modalData} token_api={this.token}></my-confirm>}
+        {this.step === 3 && (
+          <my-calendar
+            facilityId={this.modalData.facility.id}
+            token_api={this.token}
+          ></my-calendar>
+        )}
+        {this.step === 4 && (
+          <my-form selectedTime={this.modalData.selectedTime}></my-form>
+        )}
+        {this.step === 5 && (
+          <my-confirm
+            modalData={this.modalData}
+            token_api={this.token}
+          ></my-confirm>
+        )}
       </Host>
     );
   }

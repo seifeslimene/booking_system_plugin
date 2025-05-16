@@ -1,4 +1,4 @@
-@import url('../../../node_modules/flatpickr/dist/flatpickr.min.css');
+@import url("../../../node_modules/flatpickr/dist/flatpickr.min.css");
 
 :host {
   display: block;
@@ -65,20 +65,19 @@ select {
   padding: 16px 0px;
 }
 
-
 .loader-15 {
-	background: currentcolor;
-	position: relative;
-	animation: loader-15 1s ease-in-out infinite;
-	animation-delay: 0.4s;
-	width: .25em;
-	height: .5em;
-	margin: 0 .5em;
+  background: currentcolor;
+  position: relative;
+  animation: loader-15 1s ease-in-out infinite;
+  animation-delay: 0.4s;
+  width: 0.25em;
+  height: 0.5em;
+  margin: 0 0.5em;
 }
 
 .loader-15 :after,
 .loader-15 :before {
-  content: '';
+  content: "";
   position: absolute;
   width: inherit;
   height: inherit;
@@ -86,50 +85,48 @@ select {
   animation: inherit;
 }
 .loader-15 :before {
-  right: .5em;
+  right: 0.5em;
   animation-delay: 0.2s;
 }
 .loader-15 :after {
-  left: .5em;
+  left: 0.5em;
   animation-delay: 0.6s;
 }
 
-
 @keyframes loader-15 {
-	0%,
-	100% {
-		box-shadow: 0 0 0 currentcolor, 0 0 0 currentcolor;
-	}
-	50% {
-		box-shadow: 0 -.25em 0 currentcolor, 0 .25em 0 currentcolor;
-	}
+  0%,
+  100% {
+    box-shadow: 0 0 0 currentcolor, 0 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: 0 -0.25em 0 currentcolor, 0 0.25em 0 currentcolor;
+  }
 }
 
 .box {
-	display: inline-block;
-	width: 200px;
-	height: 200px;
-	border: 1px solid currentcolor;
-	border-radius: 3px;
-	font-size: 30px;
-	padding: 1em;
-	position: relative;
-	margin-bottom: .25em;
-	vertical-align: top;
-  transition: .3s color, .3s border, .3s transform, .3s opacity;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border: 1px solid currentcolor;
+  border-radius: 3px;
+  font-size: 30px;
+  padding: 1em;
+  position: relative;
+  margin-bottom: 0.25em;
+  vertical-align: top;
+  transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
 }
 
-	.box:hover {
-		color: #fff;
-		background-color: rgba(0,0,0,.1);
-		font-size: 0;
-		padding: 0;
-		border-width: 3px;
-		line-height: 200px;
-		opacity: 1;
-		transform: scale(1.2);
-		z-index: 2;
-
+.box:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 0;
+  padding: 0;
+  border-width: 3px;
+  line-height: 200px;
+  opacity: 1;
+  transform: scale(1.2);
+  z-index: 2;
 }
 
 .box:hover [class*="loader-"] {

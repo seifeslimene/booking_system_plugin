@@ -1,9 +1,6 @@
 # my-button
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,14 +8,14 @@
 | ---------------- | ----------------- | ----------- | --------- | ------- |
 | `buttonExpanded` | `button-expanded` |             | `boolean` | `true`  |
 
-
 ## Dependencies
 
 ### Used by
 
- - [my-component](../my-component)
+- [my-component](../my-component)
 
 ### Graph
+
 ```mermaid
 graph TD;
   my-component --> my-button

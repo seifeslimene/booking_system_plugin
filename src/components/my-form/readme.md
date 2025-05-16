@@ -1,9 +1,6 @@
 # my-form
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,21 +8,20 @@
 | -------------- | --------------- | ----------- | ----- | ----------- |
 | `selectedTime` | `selected-time` |             | `any` | `undefined` |
 
-
 ## Events
 
 | Event        | Description | Type                    |
 | ------------ | ----------- | ----------------------- |
 | `stepChange` |             | `CustomEvent<StepData>` |
 
-
 ## Dependencies
 
 ### Used by
 
- - [my-modal](../my-modal)
+- [my-modal](../my-modal)
 
 ### Graph
+
 ```mermaid
 graph TD;
   my-modal --> my-form

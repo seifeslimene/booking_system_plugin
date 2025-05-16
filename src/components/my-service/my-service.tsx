@@ -1,4 +1,13 @@
-import { Component, Host, h, State, Event, EventEmitter, Element, Prop } from "@stencil/core";
+import {
+  Component,
+  Host,
+  h,
+  State,
+  Event,
+  EventEmitter,
+  Element,
+  Prop,
+} from "@stencil/core";
 
 export interface StepData {
   step: number;
@@ -20,23 +29,70 @@ export class MyService {
   @Prop() token_api: string;
 
   async componentDidLoad() {
-
     // let res = await fetch(
     //   `https://app.clubmaster.org/api/v1/products?api=${this.token_api}`
     // );
     // let response = await res.json();
     // this.services = response.result;
     this.services = [
-      { id: 1, name: '1 haircut', description: '', duration: 30, price: 35.00, currency: 'USD' },
-      { id: 2, name: '1 hour tennis practice', description: '', duration: 60, price: 120.00, currency: 'USD' },
-      { id: 3, name: '1 hour, fullbody message', description: '', duration: 50, price: 40.00, currency: 'USD' },
-      { id: 4, name: 'Detail Wash', description: '', duration: 50, price: 20.00, currency: 'USD' },
-      { id: 5, name: 'Personal Coaching', description: '', duration: 60, price: 25.00, currency: 'USD' },
-      { id: 6, name: 'Personal Coaching', description: '', duration: 60, price: 15.00, currency: 'USD' },
-      { id: 7, name: 'Personal Coaching', description: '', duration: 30, price: 10.00, currency: 'USD' },
-    ]
+      {
+        id: 1,
+        name: "1 haircut",
+        description: "",
+        duration: 30,
+        price: 35.0,
+        currency: "USD",
+      },
+      {
+        id: 2,
+        name: "1 hour tennis practice",
+        description: "",
+        duration: 60,
+        price: 120.0,
+        currency: "USD",
+      },
+      {
+        id: 3,
+        name: "1 hour, fullbody message",
+        description: "",
+        duration: 50,
+        price: 40.0,
+        currency: "USD",
+      },
+      {
+        id: 4,
+        name: "Detail Wash",
+        description: "",
+        duration: 50,
+        price: 20.0,
+        currency: "USD",
+      },
+      {
+        id: 5,
+        name: "Personal Coaching",
+        description: "",
+        duration: 60,
+        price: 25.0,
+        currency: "USD",
+      },
+      {
+        id: 6,
+        name: "Personal Coaching",
+        description: "",
+        duration: 60,
+        price: 15.0,
+        currency: "USD",
+      },
+      {
+        id: 7,
+        name: "Personal Coaching",
+        description: "",
+        duration: 30,
+        price: 10.0,
+        currency: "USD",
+      },
+    ];
     this.loading = false;
-
   }
 
   checkPP(e: any, id: any) {
@@ -48,8 +104,8 @@ export class MyService {
       );
     }
     e.stopPropagation();
-    let checkParentNode = this.domService.querySelector(`#service${id}`)
-    let checkBox = checkParentNode.querySelector('.checkbox')
+    let checkParentNode = this.domService.querySelector(`#service${id}`);
+    let checkBox = checkParentNode.querySelector(".checkbox");
     if (!(e.target.className === "checkbox")) {
       checkBox.checked = !checkBox.checked;
     }
@@ -58,20 +114,24 @@ export class MyService {
   onPickTime() {
     if (this.selectedServicesIds.length === 0) {
       this.error = true;
-    }
-    else {
+    } else {
       let selectedServices = this.services.filter((el) =>
         this.selectedServicesIds.includes(el.id)
       );
-      this.stepChange.emit({ step: 2, data: selectedServices, name: "services" });
+      this.stepChange.emit({
+        step: 2,
+        data: selectedServices,
+        name: "services",
+      });
     }
-
   }
-  
+
   render() {
     return (
       <Host>
-        {this.loading ? <my-loader></my-loader> : (
+        {this.loading ? (
+          <my-loader></my-loader>
+        ) : (
           <div
             class="ser"
             style={{
@@ -138,29 +198,35 @@ export class MyService {
                         Alert!
                       </h2>
                       <p>
-                        You need to select at least a single product, click on the
-                        product name to buy it
+                        You need to select at least a single product, click on
+                        the product name to buy it
                       </p>
                     </div>
                   </li>
                 )}
                 {this.services.map((service) => (
-                  <li class="service" id={`service${service.id}`} onClick={(e) => this.checkPP(e, service.id)}>
+                  <li
+                    class="service"
+                    id={`service${service.id}`}
+                    onClick={(e) => this.checkPP(e, service.id)}
+                  >
                     <div class="box-services">
                       <div class="left-service">
                         <div class="title-service">{service.name}</div>
                         <div class="desc-service">{service.description}</div>
                         <div class="tag-services">
                           <div class="duration">{service.duration} Min</div>
-                          <div class="price">{service.price} {service.currency}</div>
+                          <div class="price">
+                            {service.price} {service.currency}
+                          </div>
                         </div>
                       </div>
                       <div class="right-service">
                         <input
                           type="checkbox"
                           value={service.name}
-                          onChange={e => {
-                            e.preventDefault()
+                          onChange={(e) => {
+                            e.preventDefault();
                             e.stopPropagation();
                             return false;
                           }}
@@ -186,8 +252,8 @@ export class MyService {
                 </button>
               </div>
             </div>
-          </div>)}
-
+          </div>
+        )}
       </Host>
     );
   }

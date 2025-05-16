@@ -5,7 +5,7 @@ import {
   h,
   State,
   Prop,
-  Element
+  Element,
 } from "@stencil/core";
 import moment from "moment";
 
@@ -42,9 +42,8 @@ export class MyConfirm implements ComponentInterface {
       }
     )
       .then(() => {
-
         this.loading = false;
-        this.status = "success"
+        this.status = "success";
       })
       .catch(() => (this.status = "failure"));
   }
@@ -53,18 +52,12 @@ export class MyConfirm implements ComponentInterface {
     console.log(this.modalData);
     return (
       <Host>
-
-
-
-
-
-
         <div class="summary">
           <div class="summary-services">
             <h2 class="summary-services-title">Summary</h2>
             <p class="summary-services-count">
               {this.modalData.services.length} Services
-              </p>
+            </p>
             <ul class="service">
               {this.modalData.services.map((service) => (
                 <li class="serviceinner">
@@ -97,21 +90,26 @@ export class MyConfirm implements ComponentInterface {
             <div class="servicedatatime">
               <p class="datetime">
                 {" "}
-                {moment(this.modalData.selectedTime.start).format("MMM DD, yyyy")}
+                {moment(this.modalData.selectedTime.start).format(
+                  "MMM DD, yyyy"
+                )}
               </p>
               <p class="datetime">
                 {" "}
-                {moment(this.modalData.selectedTime.start).utcOffset(60).format(
-                  "HH:mm A"
-                )}{" "}
-                  to {moment(this.modalData.selectedTime.end).utcOffset(60).format("HH:mm A")}{" "}
-                  -{" "}
+                {moment(this.modalData.selectedTime.start)
+                  .utcOffset(60)
+                  .format("HH:mm A")}{" "}
+                to{" "}
+                {moment(this.modalData.selectedTime.end)
+                  .utcOffset(60)
+                  .format("HH:mm A")}{" "}
+                -{" "}
                 {moment(this.modalData.selectedTime.end).diff(
                   moment(this.modalData.selectedTime.start),
                   "hours"
                 )}
-                  h
-                </p>
+                h
+              </p>
             </div>
           </div>
           <div class="servicestotalprice">
@@ -123,17 +121,16 @@ export class MyConfirm implements ComponentInterface {
                     {this.modalData.services
                       .map((service) => parseInt(service.price))
                       .reduce((a, b) => a + b, 0)}
-                      &nbsp;USD
-                    </p>
+                    &nbsp;USD
+                  </p>
                 </dd>
               </li>
             </ul>
           </div>
           {/* {this.loading ? */}
-          {this.loading &&
-            <my-loader></my-loader>}
+          {this.loading && <my-loader></my-loader>}
 
-          {(this.status !== "success" && !this.loading === true) && (
+          {this.status !== "success" && !this.loading === true && (
             <button
               type="button"
               class="confirm-order"
@@ -142,14 +139,9 @@ export class MyConfirm implements ComponentInterface {
               Confirm Order
             </button>
           )}
-
-
         </div>
 
-
         {this.status === "success" ? (
-
-
           <div class="confirm">
             <div>
               <div class="confirm1">
@@ -159,7 +151,7 @@ export class MyConfirm implements ComponentInterface {
                 <div class="confirm1">
                   <p class="textconfirm">
                     Thank you for purchasing our services!
-                </p>
+                  </p>
                 </div>
                 <div class="confirm-right">
                   <svg
@@ -177,38 +169,18 @@ export class MyConfirm implements ComponentInterface {
                 </div>
               </div>
             </div>
-
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        ) : this.status === "failure" ? (
+          // {
+          <div class="confirm">an error occurred</div>
         ) : (
-            this.status === "failure" ? (
-              // { 
-              <div class="confirm">an error occurred</div>
-              // }
-            ) : (<div></div>)
+          // }
+          <div></div>
+        )
 
-            // {/* // this.loading ? <my-loader></my-loader> : ( */}
-            // {/* ) */}
-
-
-          )}
-
+        // {/* // this.loading ? <my-loader></my-loader> : ( */}
+        // {/* ) */}
+        }
 
         {/* } */}
       </Host>

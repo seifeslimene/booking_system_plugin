@@ -47,7 +47,7 @@ export class MyCalendar {
         );
         let response = await res.json();
         this.times = await response.intervals;
-        console.log({ times: this.times })
+        console.log({ times: this.times });
         if (this.loading2) {
           this.loading2 = false;
         }
@@ -55,9 +55,9 @@ export class MyCalendar {
       },
       disable: [
         function (date) {
-          const today = new Date()
-          const yesterday = new Date(today)
-          yesterday.setDate(yesterday.getDate() - 1)
+          const today = new Date();
+          const yesterday = new Date(today);
+          yesterday.setDate(yesterday.getDate() - 1);
           return date < yesterday;
         },
       ],
@@ -112,22 +112,24 @@ export class MyCalendar {
                 <my-loader class="load"></my-loader>
               ) : (
                 <div class="container">
-                  {this.times && this.times.map((time) => (
-                    <div
-                      class="time ser"
-                      onClick={() =>
-                        this.stepChange.emit({
-                          step: 4,
-                          data: time,
-                          name: "selectedTime",
-                        })
-                      }
-                    >
-                      <span>
-                        {!(time.is_past) && moment(time.start).utcOffset(60).format("hh:mm A")}
-                      </span>
-                    </div>
-                  ))}
+                  {this.times &&
+                    this.times.map((time) => (
+                      <div
+                        class="time ser"
+                        onClick={() =>
+                          this.stepChange.emit({
+                            step: 4,
+                            data: time,
+                            name: "selectedTime",
+                          })
+                        }
+                      >
+                        <span>
+                          {!time.is_past &&
+                            moment(time.start).utcOffset(60).format("hh:mm A")}
+                        </span>
+                      </div>
+                    ))}
                 </div>
               )}
             </div>

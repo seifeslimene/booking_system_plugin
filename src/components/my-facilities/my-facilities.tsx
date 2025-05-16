@@ -1,4 +1,12 @@
-import { Component, Host, h, State, Event, EventEmitter, Prop } from "@stencil/core";
+import {
+  Component,
+  Host,
+  h,
+  State,
+  Event,
+  EventEmitter,
+  Prop,
+} from "@stencil/core";
 
 export interface StepData {
   step: number;

@@ -1,15 +1,12 @@
 # my-modal
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Dependencies
 
 ### Used by
 
- - [my-component](../my-component)
+- [my-component](../my-component)
 
 ### Depends on
 
@@ -20,6 +17,7 @@
 - [my-confirm](../my-confirm)
 
 ### Graph
+
 ```mermaid
 graph TD;
   my-modal --> my-service

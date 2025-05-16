@@ -1,9 +1,6 @@
 # my-component
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Dependencies
 
@@ -13,6 +10,7 @@
 - [my-button](../my-button)
 
 ### Graph
+
 ```mermaid
 graph TD;
   my-component --> my-modal
